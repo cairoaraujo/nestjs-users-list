@@ -1,15 +1,11 @@
-import { randomUUID } from 'crypto';
-import { UserSchema } from './interfaces/users.interface';
+import { PrismaService } from 'src/prisma/prisma.service';
+import { UsersController } from './users.controller';
+import { UserService } from './users.service';
+import { Module } from '@nestjs/common';
 
-export class User {
-  props: UserSchema;
-  _id: string;
-
-  constructor(props: UserSchema, id?: string) {
-    this.props = props;
-    this._id = id || randomUUID();
-  }
-  get id(): string {
-    return this._id;
-  }
-}
+@Module({
+  imports: [],
+  controllers: [UsersController],
+  providers: [UserService, PrismaService],
+})
+export class UserModule {}

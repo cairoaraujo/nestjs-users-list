@@ -6,14 +6,13 @@ import { UserService } from './users.service';
 export class UsersController {
   constructor(private usersService: UserService) {}
   @Get()
-  getUsers(): string {
+  async getUsers(): Promise<any> {
     console.log('Fetching users');
-    this.usersService.getUsers();
-    return 'List of users will be returned here';
+    return this.usersService.getUsers();
   }
   @Post('user')
   async createUser(@Body() body: CreateUserDto) {
     console.log('Creating user:', body);
-    await this.usersService.createUser(body);
+    return this.usersService.createUser(body);
   }
 }
