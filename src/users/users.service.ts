@@ -24,6 +24,7 @@ export class UserService {
         name: data.name,
         email: data.email,
         createdAt: new Date(),
+        updatedAt: new Date(),
       },
     });
     return {
@@ -79,6 +80,7 @@ export class UserService {
       name: updatedUser.name,
       email: updatedUser.email,
       createdAt: updatedUser.createdAt,
+      updatedAt: updatedUser.updatedAt as Date,
     };
   }
 }

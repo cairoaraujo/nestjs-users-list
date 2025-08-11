@@ -3,4 +3,5 @@ export interface UserSchema {
   email: string;
   password: string;
   createdAt: Date;
+  updatedAt: Date;
 }

@@ -18,7 +18,7 @@ export class UsersController {
     console.log('Fetching users');
     return this.usersService.getUsers();
   }
-  @Post('user')
+  @Post()
   async createUser(@Body() body: CreateUserDto) {
     console.log('Creating user:', body);
     return this.usersService.createUser(body);
