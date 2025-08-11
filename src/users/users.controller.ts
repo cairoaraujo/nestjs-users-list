@@ -13,6 +13,10 @@ import { UserService } from './users.service';
 @Controller('users')
 export class UsersController {
   constructor(private usersService: UserService) {}
+  @Get('test-redis')
+  testRedis() {
+    return this.usersService.testRedis();
+  }
   @Get()
   async getUsers(): Promise<any> {
     console.log('Fetching users');
